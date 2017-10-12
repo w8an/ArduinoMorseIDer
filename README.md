@@ -3,7 +3,7 @@ Written in Visuino openwire development environment.
 Steven R. Stuart, W8AN
 
 ### Usage
-Morse code is manually entered into the TextValueMorse object. Begin your message with a 0. Use 1 for tone, 0 for silence. The letter 'A' (di-dah) would be encoded as 101110. A dot (10) then a dash (1110). Use two zeros (00) for an inter-word space and four zeros (0000) to separate words. So 'hi world' which sounds like this: di-di-di-dit  di-dit    di-dah-dah  dah-dah-dah  di-dah-dit  di-dah-di-dit  dah-di-dit, would be encoded as:
+Morse code is manually entered into the TextValueMorse object. Begin your message with a 0. Use 1 for tone, 0 for silence. The letter 'A' (di-dah) would be encoded as 101110. A dot (10) then a dash (1110). Use two zeros (00) for an inter-word space and four zeros (0000) to separate words. So 'hi world' which sounds like this: di-di-di-dit &nbsp; di-dit &nbsp; &nbsp; di-dah-dah &nbsp; dah-dah-dah &nbsp; di-dah-dit &nbsp; di-dah-di-dit &nbsp; dah-di-dit, would be encoded as:
 ```
   H        I   Sp  W          O            R         L           D
 0101010100010100000101110111001110111011100101110100010111010100011101010
