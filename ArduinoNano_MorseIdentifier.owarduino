@@ -1,0 +1,343 @@
+<OPEN WIRE DIAGRAM VERSION 1/>
+<UNIT Unit1>
+  <COMPONENT Arduino>
+    <X 1504/>
+    <INSTANCE object Arduino: TArduinoBoard
+  Modules.Items = <
+    item
+      _ = TArduinoEEPROMModule
+    end\>
+  BoardType = 'Arduino Nano'
+  AnalogInputReference = Default
+  Serial.Items = <
+    item
+      _ = TArduinoHardwareSerial
+    end\>
+  AnalogInput.Items = <
+    item
+      _ = TArduinoAnalogOptionalAsDigitalInputChannel
+    end
+    item
+      _ = TArduinoAnalogOptionalAsDigitalInputChannel
+    end\>
+  I2CChannels.Items = <
+    item
+      _ = TArduinoI2C
+    end\>
+  SPIChannels.Items = <
+    item
+      _ = TArduinoSPI
+    end\>
+  Digital.Items = <
+    item
+      _ = TArduinoAdditionalDigitalSerial0Channel
+    end
+    item
+      _ = TArduinoAdditionalDigitalSerial0Channel
+    end
+    item
+      _ = TArduinoAdditionalDigitalInterruptChannel
+      DigitalInputPin.Form = __OpenWireRootUnit__
+      DigitalInputPin.SourcePin = __OpenWireRootUnit__.CompareValue3.OutputPin
+      OutputPin.Form = __OpenWireRootUnit__
+      OutputPin.SinkPins = (
+        __OpenWireRootUnit__.XmitLED.InputPin
+        __OpenWireRootUnit__.XmitSwitch.InputPin)
+    end
+    item
+      _ = TArduinoBasicDigitalPWMInterruptChannel
+    end
+    item
+      _ = TArduinoAdditionalDigitalChannel
+    end
+    item
+      _ = TArduinoBasicDigitalPWMChannel
+    end
+    item
+      _ = TArduinoBasicDigitalPWMChannel
+    end
+    item
+      _ = TArduinoAdditionalDigitalChannel
+      DigitalInputPin.Form = __OpenWireRootUnit__
+      DigitalInputPin.SourcePin = __OpenWireRootUnit__.PlayFrequency1.OutputPin
+    end
+    item
+      _ = TArduinoAdditionalDigitalChannel
+      DigitalInputPin.Form = __OpenWireRootUnit__
+      DigitalInputPin.SourcePin = __OpenWireRootUnit__.CompareValue2.OutputPin
+      OutputPin.Form = __OpenWireRootUnit__
+      OutputPin.SinkPins = (
+        __OpenWireRootUnit__.CodeLED.InputPin)
+    end
+    item
+      _ = TArduinoBasicDigitalPWMChannel
+    end
+    item
+      _ = TArduinoBasicDigitalPWMChannel
+    end
+    item
+      _ = TArduinoBasicDigitalPWMSPI0Channel
+    end
+    item
+      _ = TArduinoAdditionalDigitalSPI0Channel
+    end
+    item
+      _ = TArduinoAdditionalDigitalSPI0Channel
+    end
+    item
+      _ = TArduinoCombinedAnalogDigitalChannel
+    end
+    item
+      _ = TArduinoCombinedAnalogDigitalChannel
+    end
+    item
+      _ = TArduinoCombinedAnalogDigitalChannel
+    end
+    item
+      _ = TArduinoCombinedAnalogDigitalChannel
+    end
+    item
+      _ = TArduinoCombinedAnalogDigitalI2C0Channel
+    end
+    item
+      _ = TArduinoCombinedAnalogDigitalI2C0Channel
+    end\>
+end
+/>
+    <Y 256/>
+  </COMPONENT>
+  <COMPONENT PlayFrequency1>
+    <X 1040/>
+    <INSTANCE object PlayFrequency1: TArduinoPlayFrequencyTone
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    (
+      __OpenWireRootUnit__.Arduino.Digital._Item7.DigitalInputPin
+      
+        '__OpenWireRootUnit__.Arduino.Digital.Digital[ 7 ].DigitalInputPi' +
+        'n'))
+  InitialFrequency = 880.000000000000000000
+  Elements.Items = <
+    item
+      _ = TArduinoPlayFrequencyToneStateSetValueElement
+      Name = 'Play Tone State1'
+      InputPin.Form = __OpenWireRootUnit__
+      InputPin.SourcePin = __OpenWireRootUnit__.CompareValue2.OutputPin
+    end\>
+end
+/>
+    <Y 656/>
+  </COMPONENT>
+  <COMPONENT TextValueMorse>
+    <X 416/>
+    <INSTANCE object TextValueMorse: TArduinoTextValue
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    __OpenWireRootUnit__.TextLength3.InputPin
+    __OpenWireRootUnit__.SubText2.InputPin)
+  ClockInputPin.Form = __OpenWireRootUnit__
+  ClockInputPin.SourcePins = (
+    __OpenWireRootUnit__.CodeSpeed.OutputPin)
+  Value = 
+    '0111010100010001011101110001110111011101010001011100011101000000' +
+    '0'
+end
+/>
+    <Y 400/>
+  </COMPONENT>
+  <COMPONENT CodeSpeed>
+    <X 256/>
+    <INSTANCE object CodeSpeed: TArduinoPulseGenerator
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    __OpenWireRootUnit__.TextValueMorse.ClockInputPin
+    __OpenWireRootUnit__.Counter2.InputPin)
+  Frequency = 12.000000000000000000
+end
+/>
+    <Y 400/>
+  </COMPONENT>
+  <COMPONENT TextLength3>
+    <X 688/>
+    <INSTANCE object TextLength3: TArduinoTextLength
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = __OpenWireRootUnit__.TextValueMorse.OutputPin
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    __OpenWireRootUnit__.CompareValue1.InputPin
+    __OpenWireRootUnit__.CompareValue3.InputPin)
+end
+/>
+    <Y 320/>
+  </COMPONENT>
+  <COMPONENT Counter2>
+    <X 800/>
+    <INSTANCE object Counter2: TArduinoCounter
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    (
+      __OpenWireRootUnit__.SubText2.PositionInputPin
+      '__OpenWireRootUnit__.SubText2.Position')
+    (
+      __OpenWireRootUnit__.CompareValue1.ValueInputPin
+      '__OpenWireRootUnit__.CompareValue1.Value')
+    (
+      __OpenWireRootUnit__.CompareValue3.ValueInputPin
+      '__OpenWireRootUnit__.CompareValue3.Value'))
+  ResetInputPin.Form = __OpenWireRootUnit__
+  ResetInputPin.SourcePins = (
+    __OpenWireRootUnit__.Delay1.OutputPin)
+  Min.RollOver = False
+  Max.RollOver = False
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePins = (
+    __OpenWireRootUnit__.CodeSpeed.OutputPin)
+end
+/>
+    <Y 384/>
+  </COMPONENT>
+  <COMPONENT SubText2>
+    <X 960/>
+    <INSTANCE object SubText2: TArduinoSubText
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    __OpenWireRootUnit__.TextToInteger1.InputPin)
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = __OpenWireRootUnit__.TextValueMorse.OutputPin
+end
+/>
+    <Y 432/>
+  </COMPONENT>
+  <COMPONENT CompareValue1>
+    <X 960/>
+    <INSTANCE object CompareValue1: TArduinoIntegerCompareValue
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = __OpenWireRootUnit__.TextLength3.OutputPin
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    __OpenWireRootUnit__.Delay1.StartInputPin)
+end
+/>
+    <Y 256/>
+  </COMPONENT>
+  <COMPONENT TextToInteger1>
+    <X 576/>
+    <INSTANCE object TextToInteger1: TArduinoTextToInteger
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = __OpenWireRootUnit__.SubText2.OutputPin
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    __OpenWireRootUnit__.CompareValue2.InputPin)
+end
+/>
+    <Y 672/>
+  </COMPONENT>
+  <COMPONENT CompareValue2>
+    <X 768/>
+    <INSTANCE object CompareValue2: TArduinoIntegerCompareValue
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = __OpenWireRootUnit__.TextToInteger1.OutputPin
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    (
+      __OpenWireRootUnit__.PlayFrequency1.Elements._Item0.InputPin
+      
+        '__OpenWireRootUnit__.PlayFrequency1.Elements.Play Tone State1.In' +
+        'putPin')
+    (
+      __OpenWireRootUnit__.Arduino.Digital._Item8.DigitalInputPin
+      
+        '__OpenWireRootUnit__.Arduino.Digital.Digital[ 8 ].DigitalInputPi' +
+        'n'))
+end
+/>
+    <Y 672/>
+  </COMPONENT>
+  <COMPONENT Delay1>
+    <X 1136/>
+    <INSTANCE object Delay1: TArduinoDelay
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    __OpenWireRootUnit__.Counter2.ResetInputPin)
+  Interval = 30000000
+  StartInputPin.Form = __OpenWireRootUnit__
+  StartInputPin.SourcePins = (
+    __OpenWireRootUnit__.CompareValue1.OutputPin)
+end
+/>
+    <Y 256/>
+  </COMPONENT>
+  <COMPONENT CompareValue3>
+    <X 960/>
+    <INSTANCE object CompareValue3: TArduinoIntegerCompareValue
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = __OpenWireRootUnit__.TextLength3.OutputPin
+  OutputPin.Form = __OpenWireRootUnit__
+  OutputPin.SinkPins = (
+    (
+      __OpenWireRootUnit__.Arduino.Digital._Item2.DigitalInputPin
+      
+        '__OpenWireRootUnit__.Arduino.Digital.Digital[ 2 ].DigitalInputPi' +
+        'n'))
+  CompareType = ctSmaller
+end
+/>
+    <Y 320/>
+  </COMPONENT>
+  <COMPONENT XmitLED>
+    <X 1792/>
+    <INSTANCE object XmitLED: TArduinoLED
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = (
+    __OpenWireRootUnit__.Arduino.Digital._Item2.OutputPin
+    '__OpenWireRootUnit__.Arduino.Digital.Digital[ 2 ].OutputPin')
+end
+/>
+    <Y 432/>
+  </COMPONENT>
+  <COMPONENT CodeLED>
+    <X 1792/>
+    <INSTANCE object CodeLED: TArduinoLED
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = (
+    __OpenWireRootUnit__.Arduino.Digital._Item8.OutputPin
+    '__OpenWireRootUnit__.Arduino.Digital.Digital[ 8 ].OutputPin')
+end
+/>
+    <Y 672/>
+  </COMPONENT>
+  <COMPONENT XmitSwitch>
+    <X 1792/>
+    <INSTANCE object XmitSwitch: TArduinoRelay
+  InputPin.Form = __OpenWireRootUnit__
+  InputPin.SourcePin = (
+    __OpenWireRootUnit__.Arduino.Digital._Item2.OutputPin
+    '__OpenWireRootUnit__.Arduino.Digital.Digital[ 2 ].OutputPin')
+end
+/>
+    <Y 480/>
+  </COMPONENT>
+    <SELECTION CodeLED/>
+    <BINDINGS object TOWPinBindingManager
+  Bindings = (
+    SubText2
+    (
+      Position
+      TOWCardinalSinkPinBinding
+      'Position'
+      __OpenWireRootUnit__.Counter2.OutputPin)
+    CompareValue1
+    (
+      Value
+      TOWIntegerSinkPinBinding
+      'Value'
+      __OpenWireRootUnit__.Counter2.OutputPin)
+    CompareValue3
+    (
+      Value
+      TOWIntegerSinkPinBinding
+      'Value'
+      __OpenWireRootUnit__.Counter2.OutputPin))
+end
+/>
+</UNIT>
