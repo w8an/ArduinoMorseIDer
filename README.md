@@ -16,7 +16,7 @@ Morse code is manually entered into the Value property of the TextValueMorse obj
 - Set message launch interval time using the Frequency property of the PulseGenerator object. Note that the PulseGenerator Frequency property is in Hertz (pulses per second). If you want a message started every 20 seconds, input 0.05 (1/20 Hz). Once per minute would be 0.016667 (1/60 Hz).
 
 **Using an Arduino Nano**<br>
-- Pin D2 is the transmitter switch output
+- Pin D12 is the transmitter switch output, D13 is an inverted output
 - Pin D8 is a switched morse code output
-- Pin D7 is morse code audio. Use a 10uf capacitor in series with a speaker running to GND to hear the code.
+- Pin D4 is morse code audio. Use a 10uf capacitor in series with a speaker running to GND to hear the code.
 
