@@ -2,6 +2,8 @@
 Written in Visuino openwire development environment.<br>
 Steven R. Stuart, W8AN
 
+A full description of the operation can be viewed at http://w8an.net/foxhuntid/
+
 ### Usage
 **Programming**<br>
 Morse code is manually entered into the Value property of the TextValueMorse object. Begin your message with a 0. Use 1 for tone, 0 for silence. The letter 'A' (di-dah) would be encoded as 101110. A dot (10) then a dash (1110). Use two zeros (00) for an inter-word space and four zeros (0000) to separate words. So 'hi world' which sounds like this: di-di-di-dit &nbsp; di-dit &nbsp; &nbsp; di-dah-dah &nbsp; dah-dah-dah &nbsp; di-dah-dit &nbsp; di-dah-di-dit &nbsp; dah-di-dit, would be encoded as:
